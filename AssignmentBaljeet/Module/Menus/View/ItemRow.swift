@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ItemRow : View {
-    let item: Row
+    let item: Rows
     var body: some View {
         HStack {
             NetworkImage(url: URL(string: item.imageHref))
@@ -19,7 +19,7 @@ struct ItemRow : View {
                 .scaledToFit()
             VStack(alignment: .leading) {
                 Text(item.title).bold()
-                Text("\(item.descriptionField)")
+                Text("\(item.description)")
             }
             
         }
@@ -27,6 +27,6 @@ struct ItemRow : View {
 }
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRow(item: Row(fromDictionary: [:]))
+        ItemRow(item: Rows(fromDict: [:]))
     }
 }

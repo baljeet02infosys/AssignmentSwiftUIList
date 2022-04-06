@@ -23,7 +23,9 @@ struct ContentView: View {
             }.pullToRefresh(isShowing: $isShowing) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.isShowing = false
-                    viewModel.getMenus()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        viewModel.getMenus()
+                    }
                 }
             }
             .navigationTitle(viewModel.menusData.title)
