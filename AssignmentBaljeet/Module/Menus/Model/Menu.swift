@@ -9,8 +9,6 @@ struct Menu: Codable,Identifiable{
     var id: UUID
 	var rows : [Row]!
 	var title : String = "Menus"
-
-
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
 	 */
@@ -39,9 +37,7 @@ struct Menu: Codable,Identifiable{
 			}
 			dictionary["rows"] = dictionaryElements
 		}
-		if title != nil{
 			dictionary["title"] = title
-		}
 		return dictionary
 	}
 

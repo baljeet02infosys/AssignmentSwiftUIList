@@ -1,6 +1,3 @@
-//
-//	Row.swift
-//	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
 import SwiftUI
@@ -10,7 +7,6 @@ struct Row: Codable, Equatable,Identifiable {
 	var descriptionField : String!
 	var imageHref : String!
 	var title : String!
-
 
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values

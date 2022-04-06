@@ -17,7 +17,6 @@ class CLProgressHUD: SVProgressHUD {
       self.show(withStatus: status)
     }
   }
-  
   class func dismiss(animated: Bool) {
     SVProgressHUD.dismiss()
   }

@@ -7,8 +7,7 @@ target 'AssignmentBaljeet' do
   pod 'Alamofire'
   pod 'SVProgressHUD', '~> 2.2.5'
   pod 'AlamofireImage'
-  # Pods for AssignmentBaljeet
-
+  pod "SwiftUIRefresh"  # Pods for AssignmentBaljeet
   target 'AssignmentBaljeetTests' do
     inherit! :search_paths
     # Pods for testing
