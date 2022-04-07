@@ -13,15 +13,20 @@ import SwiftUI
 struct ItemRow : View {
     let item: Rows
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             NetworkImage(url: URL(string: item.imageHref))
                 .frame(width: imageSize, height: imageSize)
                 .clipShape(RoundedRectangle(cornerRadius: imageRadius))
                 .clipShape(Circle())
                 .scaledToFit()
+                
             VStack(alignment: .leading) {
-                Text(item.title).bold()
-                Text("\(item.description)")
+                if !item.title.isEmpty {
+                    Text(item.title).bold()
+                }
+                if !item.description.isEmpty {
+                    Text("\(item.description)")
+                }
             }
         }
     }

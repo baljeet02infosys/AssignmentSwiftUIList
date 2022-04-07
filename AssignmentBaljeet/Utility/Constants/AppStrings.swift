@@ -15,4 +15,5 @@ struct AppString {
     static let ok = "OK"
     static let noFeeds = "No Feeds!"
     static let menu = "Menus"
+    static let launchScreenText = "Welcome Screen!"
 }

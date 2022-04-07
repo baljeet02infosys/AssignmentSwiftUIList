@@ -12,20 +12,19 @@ import Combine
 
 struct NetworkImage: View {
     @StateObject private var viewModel = ViewModel()
-
     let url: URL?
     var body: some View {
         Group {
             if let data = viewModel.imageData, let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
             } else if viewModel.isLoading {
                 ProgressView()
             } else {
                 Image("cheese-toastie-thumb")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                    
             }
         }
