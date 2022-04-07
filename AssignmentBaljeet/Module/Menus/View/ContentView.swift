@@ -44,9 +44,13 @@ struct ContentView: View {
             }.alert(isPresented: $viewModel.hasError) {
                 return Alert(title: Text("Error"), message: Text("No internet!" ), dismissButton: .default(Text("OK")))
             }
-        }
+            PlaceholderView()
+        }.frame(maxWidth:715)
+            .phoneOnlyStackNavigationView()
+        
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
