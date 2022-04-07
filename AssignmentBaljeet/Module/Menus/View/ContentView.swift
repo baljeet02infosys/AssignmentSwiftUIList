@@ -15,7 +15,7 @@ import Combine
 struct ContentView: View {
     @ObservedObject var viewModel = MenuModelView()
     @State private var isShowing = false
-    @State var isActive:Bool = false
+    @State private var isActive:Bool = false
     @Orientation var orientation
 
     var body: some View {
@@ -28,7 +28,9 @@ struct ContentView: View {
                         }
                     } else {
                         ForEach(viewModel.menusData.rows) { section in
-                            ItemRow(item: section)
+                            if !section.title.isEmpty || !section.description.isEmpty {
+                                ItemRow(item: section)
+                            }
                         }
                     }
                 }.pullToRefresh(isShowing: $isShowing) {

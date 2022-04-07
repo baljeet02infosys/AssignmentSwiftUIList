@@ -18,7 +18,7 @@ struct NetworkImage: View {
             if let data = viewModel.imageData, let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
             } else if viewModel.isLoading {
                 ProgressView()
             } else {
