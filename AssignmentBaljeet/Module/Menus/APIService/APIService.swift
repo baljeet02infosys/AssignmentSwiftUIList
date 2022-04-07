@@ -36,7 +36,6 @@ class AppServerClient {
                         do{
                             if let json = string.data(using: String.Encoding.utf8){
                                 if (try JSONSerialization.jsonObject(with: json, options: .allowFragments) as? [String:AnyObject]) != nil{
-                                    
                                     let jsonDecoder = JSONDecoder()
                                     let responseModel = try jsonDecoder.decode(Menu.self, from: json)
                                     completion(.success(payload: responseModel))
@@ -51,12 +50,12 @@ class AppServerClient {
                            let reason = GetFeedsFailureReason(rawValue: statusCode) {
                             completion(.failure(reason))
                         }
-                        let reason = GetFeedsFailureReason(rawValue: 101)
+                        let reason = GetFeedsFailureReason(rawValue: GetFeedsFailureReason.noInterNet.rawValue)
                         completion(.failure(reason))
                     }
                 }
         } else {
-            let reason = GetFeedsFailureReason(rawValue: 101)
+            let reason = GetFeedsFailureReason(rawValue: GetFeedsFailureReason.noInterNet.rawValue)
             completion(.failure(reason))
         }
     }

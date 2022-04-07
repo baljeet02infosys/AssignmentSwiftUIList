@@ -30,3 +30,8 @@ struct ParameterKeys {
     static let rows = "rows"
     static let imageHref = "imageHref"
 }
+/// MARK:
+/// Size Constants
+let imageSize = 60.0
+let imageRadius = 25.0
+let MaxWidth = 715.0

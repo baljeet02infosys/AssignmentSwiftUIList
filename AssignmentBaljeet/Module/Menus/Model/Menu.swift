@@ -24,7 +24,7 @@ struct Menu : Codable, Identifiable {
     init(fromDict : [String: Any]) {
         title =  AppString.menu
         rows = []
-        if let rowItems = fromDict["rows"] as? [[String: Any]] {
+        if let rowItems = fromDict[ParameterKeys.rows] as? [[String: Any]] {
             for row in rowItems {
                 let rowData = Rows(fromDict: row)
                 rows.append(rowData)

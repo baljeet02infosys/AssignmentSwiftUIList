@@ -11,8 +11,6 @@ import SwiftUI
 
 /// Cell View for Menu List
 struct ItemRow : View {
-    let imageSize = 60.0
-    let imageRadius = 25.0
     let item: Rows
     var body: some View {
         HStack {

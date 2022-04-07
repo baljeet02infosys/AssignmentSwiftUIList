@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// AppString
+/// It store all common and raw Strings for Application
 struct AppString {
     static let error = "ERROR"
     static let noInternet = "No internet!"

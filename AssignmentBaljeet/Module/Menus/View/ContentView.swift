@@ -45,9 +45,8 @@ struct ContentView: View {
                 return Alert(title: Text(AppString.error), message: Text(AppString.noInternet), dismissButton: .default(Text(AppString.ok)))
             }
             PlaceholderView()
-        }.frame(maxWidth:715)
+        }.frame(maxWidth:MaxWidth)
             .phoneOnlyStackNavigationView()
-        
     }
 }
 
