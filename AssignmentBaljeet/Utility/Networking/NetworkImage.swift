@@ -12,7 +12,6 @@ import Combine
 
 struct NetworkImage: View {
     @StateObject private var viewModel = ViewModel()
-
     let url: URL?
     var body: some View {
         Group {
@@ -25,7 +24,7 @@ struct NetworkImage: View {
             } else {
                 Image("cheese-toastie-thumb")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                    
             }
         }
