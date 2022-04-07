@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4DC15D8087909D0EA03B0842 /* Pods_AssignmentBaljeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC91CFF6954492ADC41D07C7 /* Pods_AssignmentBaljeet.framework */; };
+		B30F5DA627FEDF6A0025DB42 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3228D7527FEC9440010FD8E /* AppStrings.swift */; };
+		B30F5DA727FEDF6A0025DB42 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3228D7527FEC9440010FD8E /* AppStrings.swift */; };
+		B30F5DA827FEDF730025DB42 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3305E2D27FE0793009AC418 /* Constants.swift */; };
+		B30F5DA927FEDF740025DB42 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3305E2D27FE0793009AC418 /* Constants.swift */; };
 		B311AB1427FD4F80003F41DC /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311AB1327FD4F80003F41DC /* NetworkImage.swift */; };
 		B311AB2527FD73DB003F41DC /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311AB1E27FD73DB003F41DC /* MenuViewModel.swift */; };
 		B311AB2827FD73DB003F41DC /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311AB2327FD73DB003F41DC /* ItemRow.swift */; };
@@ -621,8 +625,10 @@
 				B378C00627FDCE4400539D49 /* APIService.swift in Sources */,
 				B378C00327FDC1AA00539D49 /* Menu.swift in Sources */,
 				B378C00427FDC1AD00539D49 /* Rows.swift in Sources */,
+				B30F5DA627FEDF6A0025DB42 /* AppStrings.swift in Sources */,
 				B378C00C27FDDEE300539D49 /* MockMenu.swift in Sources */,
 				B3E8D87727FC63C700F96F3F /* AssignmentBaljeetTests.swift in Sources */,
+				B30F5DA827FEDF730025DB42 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,10 +636,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30F5DA727FEDF6A0025DB42 /* AppStrings.swift in Sources */,
 				B378C00E27FDE09000539D49 /* Menu.swift in Sources */,
 				B3E8D88127FC63C700F96F3F /* AssignmentBaljeetUITests.swift in Sources */,
 				B378C00F27FDE09300539D49 /* Rows.swift in Sources */,
 				B378C00927FDDD5E00539D49 /* APIService.swift in Sources */,
+				B30F5DA927FEDF740025DB42 /* Constants.swift in Sources */,
 				B3E8D88327FC63C700F96F3F /* AssignmentBaljeetUITestsLaunchTests.swift in Sources */,
 				B378C00A27FDDE2A00539D49 /* MenuViewModel.swift in Sources */,
 				B378C01127FDFE5700539D49 /* Result.swift in Sources */,
@@ -708,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -763,7 +771,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
