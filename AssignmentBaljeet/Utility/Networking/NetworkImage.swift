@@ -14,7 +14,6 @@ struct NetworkImage: View {
     @StateObject private var viewModel = ViewModel()
 
     let url: URL?
-
     var body: some View {
         Group {
             if let data = viewModel.imageData, let uiImage = UIImage(data: data) {
@@ -39,9 +38,7 @@ extension NetworkImage {
     class ViewModel: ObservableObject {
         @Published var imageData: Data?
         @Published var isLoading = false
-
         private static let cache = NSCache<NSURL, NSData>()
-
         private var cancellables = Set<AnyCancellable>()
 
         func loadImage(from url: URL?) {

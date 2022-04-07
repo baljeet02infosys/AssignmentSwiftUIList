@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var isShowing = false
     @Orientation var orientation
 
-    
     var body: some View {
         NavigationView {
             List {

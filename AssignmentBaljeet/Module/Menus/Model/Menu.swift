@@ -32,5 +32,4 @@ struct Menu : Codable, Identifiable {
         }
         id = UUID()
     }
-
 }
