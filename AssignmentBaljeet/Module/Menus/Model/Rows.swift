@@ -29,6 +29,7 @@ struct Rows : Codable, Identifiable {
         self.title = "Menu"
         self.imageHref = ""
         self.description = ""
+        id = UUID()
         if let name = fromDict[ParameterKeys.title] as? String {
             self.title =  name
         }
@@ -38,6 +39,5 @@ struct Rows : Codable, Identifiable {
         if let name = fromDict[ParameterKeys.description] as? String {
             self.description =  name
         }
-        id = UUID()
     }
 }

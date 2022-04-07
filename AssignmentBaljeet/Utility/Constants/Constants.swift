@@ -20,7 +20,6 @@ struct AppConfig {
      }
 }
 
-
 /// ParameterKeys
 ///  Common constants keys
 struct ParameterKeys {

@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var isShowing = false
     @Orientation var orientation
 
-    
     var body: some View {
         NavigationView {
             List {
@@ -45,9 +44,13 @@ struct ContentView: View {
             }.alert(isPresented: $viewModel.hasError) {
                 return Alert(title: Text("Error"), message: Text("No internet!" ), dismissButton: .default(Text("OK")))
             }
-        }
+            PlaceholderView()
+        }.frame(maxWidth:715)
+            .phoneOnlyStackNavigationView()
+        
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
