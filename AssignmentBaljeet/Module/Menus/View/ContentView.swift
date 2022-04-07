@@ -45,7 +45,6 @@ struct ContentView: View {
             }.alert(isPresented: $viewModel.hasError) {
                 return Alert(title: Text("Error"), message: Text("No internet!" ), dismissButton: .default(Text("OK")))
             }
-            
         }
     }
 }
