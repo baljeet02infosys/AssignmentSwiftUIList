@@ -18,6 +18,8 @@ struct AppConfig {
         }
         return value
      }
+    static let welcomeScreenTitle = "Welcome to Infosys!"
+    static let welcomeScreenDescription = "Please select a feed from the left-hand menu; swipe from the left edge to show it."
 }
 
 /// ParameterKeys
@@ -28,3 +30,8 @@ struct ParameterKeys {
     static let rows = "rows"
     static let imageHref = "imageHref"
 }
+/// MARK:
+/// Size Constants
+let imageSize = 60.0
+let imageRadius = 25.0
+let MaxWidth = 715.0

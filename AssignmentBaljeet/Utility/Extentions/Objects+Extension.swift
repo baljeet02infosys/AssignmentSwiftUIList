@@ -3,7 +3,6 @@
 import Foundation
 
 public extension DispatchQueue {
-  
   private class func delay(delay: TimeInterval, closure: @escaping () -> Void) {
     let when = DispatchTime.now() + delay
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
@@ -17,7 +16,6 @@ public extension DispatchQueue {
 }
 
 extension Dictionary {
-  
   //Append Dictionary
   mutating func appendDictionary(other: Dictionary) {
     for (key, value) in other {
