@@ -22,7 +22,7 @@ struct ContentView: View {
             List {
                 if viewModel.menusData.rows.count == 0 {
                     HStack {
-                        Text("No Feeds!").padding()
+                        Text(AppString.noFeeds).padding()
                     }
                 } else {
                     ForEach(viewModel.menusData.rows) { section in
@@ -42,7 +42,7 @@ struct ContentView: View {
             .onAppear {
                 viewModel.getMenus()
             }.alert(isPresented: $viewModel.hasError) {
-                return Alert(title: Text("Error"), message: Text("No internet!" ), dismissButton: .default(Text("OK")))
+                return Alert(title: Text(AppString.error), message: Text(AppString.noInternet), dismissButton: .default(Text(AppString.ok)))
             }
             PlaceholderView()
         }.frame(maxWidth:715)

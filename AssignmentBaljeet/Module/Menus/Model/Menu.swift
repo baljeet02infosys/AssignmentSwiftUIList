@@ -22,7 +22,7 @@ struct Menu : Codable, Identifiable {
     /// Menu Model
     /// - Parameter fromDict: JSON data type of [String: Any] to initialize Menu model
     init(fromDict : [String: Any]) {
-        title =  "Menus"
+        title =  AppString.menu
         rows = []
         if let rowItems = fromDict["rows"] as? [[String: Any]] {
             for row in rowItems {

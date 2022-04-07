@@ -11,12 +11,14 @@ import SwiftUI
 
 /// Cell View for Menu List
 struct ItemRow : View {
+    let imageSize = 60.0
+    let imageRadius = 25.0
     let item: Rows
     var body: some View {
         HStack {
             NetworkImage(url: URL(string: item.imageHref))
-                .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 25))
+                .frame(width: imageSize, height: imageSize)
+                .clipShape(RoundedRectangle(cornerRadius: imageRadius))
                 .clipShape(Circle())
                 .scaledToFit()
             VStack(alignment: .leading) {

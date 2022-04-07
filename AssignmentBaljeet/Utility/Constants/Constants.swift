@@ -18,6 +18,8 @@ struct AppConfig {
         }
         return value
      }
+    static let welcomeScreenTitle = "Welcome to Infosys!"
+    static let welcomeScreenDescription = "Please select a feed from the left-hand menu; swipe from the left edge to show it."
 }
 
 /// ParameterKeys
