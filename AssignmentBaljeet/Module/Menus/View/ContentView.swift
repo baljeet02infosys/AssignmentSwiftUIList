@@ -15,38 +15,52 @@ import Combine
 struct ContentView: View {
     @ObservedObject var viewModel = MenuModelView()
     @State private var isShowing = false
+    @State private var isActive:Bool = false
     @Orientation var orientation
 
     var body: some View {
         NavigationView {
-            List {
-                if viewModel.menusData.rows.count == 0 {
-                    HStack {
-                        Text(AppString.noFeeds).padding()
+            if self.isActive {
+                List {
+                    if viewModel.menusData.rows.count == 0 {
+                        HStack {
+                            ProgressView()
+                        }
+                    } else {
+                        ForEach(viewModel.menusData.rows) { section in
+                            if !section.title.isEmpty || !section.description.isEmpty {
+                                ItemRow(item: section)
+                            }
+                        }
                     }
-                } else {
-                    ForEach(viewModel.menusData.rows) { section in
-                        ItemRow(item: section)
+                }.pullToRefresh(isShowing: $isShowing) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.isShowing = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            viewModel.getMenus()
+                        }
                     }
                 }
-            }.pullToRefresh(isShowing: $isShowing) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.isShowing = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        viewModel.getMenus()
-                    }
+                .navigationTitle(viewModel.menusData.title)
+                .listStyle(.insetGrouped)
+                .onAppear {
+                    viewModel.getMenus()
+                }.alert(isPresented: $viewModel.hasError) {
+                    return Alert(title: Text(AppString.error), message: Text(AppString.noInternet), dismissButton: .default(Text(AppString.ok)))
                 }
+                PlaceholderView()
+            } else {
+                Text(AppString.launchScreenText)
             }
-            .navigationTitle(viewModel.menusData.title)
-            .listStyle(.insetGrouped)
-            .onAppear {
-                viewModel.getMenus()
-            }.alert(isPresented: $viewModel.hasError) {
-                return Alert(title: Text(AppString.error), message: Text(AppString.noInternet), dismissButton: .default(Text(AppString.ok)))
-            }
-            PlaceholderView()
         }.frame(maxWidth:MaxWidth)
             .phoneOnlyStackNavigationView()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
+            }
     }
 }
 
