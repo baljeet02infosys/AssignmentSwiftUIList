@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+
+/// Cell View for Menu List
 struct ItemRow : View {
     let item: Rows
     var body: some View {
@@ -21,7 +23,6 @@ struct ItemRow : View {
                 Text(item.title).bold()
                 Text("\(item.description)")
             }
-            
         }
     }
 }

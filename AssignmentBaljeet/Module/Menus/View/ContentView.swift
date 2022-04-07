@@ -8,17 +8,27 @@
 
 import SwiftUI
 import SwiftUIRefresh
+import Combine
 
 
 
 struct ContentView: View {
     @ObservedObject var viewModel = MenuModelView()
     @State private var isShowing = false
+    @Orientation var orientation
+
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.menusData.rows) { section in
-                    ItemRow(item: section)
+                if viewModel.menusData.rows.count == 0 {
+                    HStack {
+                        Text("No Feeds!").padding()
+                    }
+                } else {
+                    ForEach(viewModel.menusData.rows) { section in
+                        ItemRow(item: section)
+                    }
                 }
             }.pullToRefresh(isShowing: $isShowing) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -32,7 +42,10 @@ struct ContentView: View {
             .listStyle(.insetGrouped)
             .onAppear {
                 viewModel.getMenus()
+            }.alert(isPresented: $viewModel.hasError) {
+                return Alert(title: Text("Error"), message: Text("No internet!" ), dismissButton: .default(Text("OK")))
             }
+            
         }
     }
 }
