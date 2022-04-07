@@ -15,8 +15,8 @@ struct ItemRow : View {
     var body: some View {
         HStack {
             NetworkImage(url: URL(string: item.imageHref))
-                .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 25))
+                .frame(width: imageSize, height: imageSize)
+                .clipShape(RoundedRectangle(cornerRadius: imageRadius))
                 .clipShape(Circle())
                 .scaledToFit()
             VStack(alignment: .leading) {

@@ -7,7 +7,13 @@
 
 import Foundation
 import SwiftUI
+
+
 extension View {
+    
+    /// phoneOnlyStackNavigationView
+    /// - Returns: View
+    /// Handle UI When App is in landscape mode
     @ViewBuilder func phoneOnlyStackNavigationView() -> some View {
         if UIDevice.current.userInterfaceIdiom == .phone {
             self.navigationViewStyle(.stack)

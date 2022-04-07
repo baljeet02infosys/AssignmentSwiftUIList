@@ -26,7 +26,7 @@ struct Rows : Codable, Identifiable {
     /// Row Model
     /// - Parameter fromDict: JSON data type of [String: Any] to initialize Row model
     init(fromDict : [String: Any]) {
-        self.title = "Menu"
+        self.title = AppString.menu
         self.imageHref = ""
         self.description = ""
         id = UUID()

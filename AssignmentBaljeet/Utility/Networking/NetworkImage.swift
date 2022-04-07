@@ -24,8 +24,8 @@ struct NetworkImage: View {
                 ProgressView()
             } else {
                 Image("cheese-toastie-thumb")
-                    .frame(width: 60, height: 60)
-                    .clipShape(RoundedRectangle(cornerRadius: 25)).clipShape(Circle())
+                    .frame(width: imageSize, height: imageSize)
+                    .clipShape(RoundedRectangle(cornerRadius: imageRadius)).clipShape(Circle())
             }
         }
         .onAppear {
